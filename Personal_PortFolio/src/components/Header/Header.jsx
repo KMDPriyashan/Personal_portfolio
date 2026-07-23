@@ -19,7 +19,7 @@ const Header = () => {
       <nav className="navbar container">
         <div className="logo">
           <a href="#home">
-            <span className="logo-text">Your<span>Name</span></span>
+            <span className="logo-text">KMD<span>Priyashan</span></span>
           </a>
         </div>
 

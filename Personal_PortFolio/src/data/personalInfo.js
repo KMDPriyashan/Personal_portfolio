@@ -1,13 +1,10 @@
 export const personalInfo = {
-  name: 'Your Name',
-  title: 'Cloud Computing & Big Data Specialist',
-  index: 'Your Index Number',
-  university: 'Your University Name',
-  faculty: 'Faculty of Computing',
-  about: `I am a passionate and dedicated Cloud Computing and Big Data enthusiast with a strong foundation in modern web technologies. 
-          My journey in technology began with a curiosity for how systems work at scale, leading me to specialize in cloud 
-          infrastructure, data analytics, and full-stack development. I believe in continuous learning and applying innovative 
-          solutions to real-world problems.`,
+  name: 'K.M Dulash Priyashan',
+  title: 'Associate Software Engineer | Experience Mobile Application Developer',
+  Address: '219/A vijerama road , Gampaha',
+  university: 'Gampaha Wickramarachchi University of Indigenous Medicine',
+  faculty: 'Faculty of indigenous health sciences technology',
+  about: `I am a passionate and dedicated software engineer and mobile application developer with a strong foundation in modern development frameworks. My journey in technology began with a curiosity for building seamless, user-centric experiences, leading me to specialize in mobile architecture, cross-platform development, and robust backend integrations. I believe in continuous learning and applying innovative solutions to real-world problems.`,
   
   skills: [
     { name: 'React.js', level: 90, icon: 'fab fa-react' },

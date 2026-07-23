@@ -92,14 +92,14 @@
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 1.5rem;
 }
 
 .hero-description {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.8;
   max-width: 500px;
@@ -143,23 +143,32 @@
   align-items: center;
 }
 
+/* ============================================ */
+/* IMAGE UPDATED - LARGE SIZE WITH CIRCLE */
+/* ============================================ */
+
 .hero-avatar {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 550px;          /* Increased from 350px */
+  height: 550px;         /* Increased from 350px */
+  border-radius: 30%;           /* Changed from 20% to 50% for perfect circle */
+  overflow: hidden;             /* Keeps image inside circle */
+  flex-shrink: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  box-shadow: 0 0 60px rgba(0, 210, 255, 0.1);
 }
 
+/* Rotating ring - stays on top */
 .avatar-ring {
   position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 370px;
-  height: 370px;
-  border-radius: 50%;
-  border: 3px solid transparent;
-  border-top-color: #00d2ff;
-  border-bottom-color: #3a7bd5;
-  animation: spin 10s linear infinite;
+  top: -12px;
+  left: -12px;
+  width: 780px;          /* Increased to match new size */
+  height: 780px;         /* Increased to match new size */
+  border-radius: 20%;
+  z-index: 2;
+  pointer-events: none;
 }
 
 @keyframes spin {
@@ -167,17 +176,92 @@
   100% { transform: rotate(360deg); }
 }
 
-.avatar-placeholder {
+/* Second ring for extra style */
+.avatar-ring::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border-radius: 50%;
+}
+
+/* Profile Image - LARGE SIZE */
+.profile-image {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(0, 210, 255, 0.1), rgba(58, 123, 213, 0.1));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 8rem;
-  color: rgba(255, 255, 255, 0.2);
-  border: 3px solid rgba(0, 210, 255, 0.3);
+  object-fit: cover;
+  object-position: center top;   /* Focus on top part (face) */
+  display: block;
+  transition: all 0.5s ease;
+}
+
+/* Image hover effect */
+.profile-image:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1) contrast(1.05);
+}
+
+/* Pulse animation for image */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.profile-image {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+/* Glow effect behind image */
+.hero-avatar::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.15), transparent 70%);
+  z-index: 0;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Hide avatar placeholder */
+.avatar-placeholder {
+  display: none;
+}
+
+/* ============================================ */
+/* RESPONSIVE ADJUSTMENTS */
+/* ============================================ */
+
+@media (max-width: 1200px) {
+  .hero-avatar {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .avatar-ring {
+    width: 374px;
+    height: 374px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -195,13 +279,13 @@
   }
 
   .hero-avatar {
-    width: 250px;
-    height: 250px;
+    width: 320px;
+    height: 320px;
   }
 
   .avatar-ring {
-    width: 270px;
-    height: 270px;
+    width: 344px;
+    height: 344px;
   }
 
   .hero-title {
@@ -212,5 +296,35 @@
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.2rem;
+  }
+
+  .hero-avatar {
+    width: 250px;
+    height: 250px;
+  }
+
+  .avatar-ring {
+    width: 274px;
+    height: 274px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-avatar {
+    width: 200px;
+    height: 200px;
+  }
+
+  .avatar-ring {
+    width: 224px;
+    height: 224px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
   }
 }

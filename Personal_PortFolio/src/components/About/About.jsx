@@ -1,5 +1,6 @@
 import React from 'react';
 import { personalInfo } from '../../data/personalInfo';
+import heroImage from '../../assets/hero.png';
 import './About.css';
 
 const About = () => {
@@ -13,7 +14,7 @@ const About = () => {
             <div className="about-details">
               <div className="detail-item">
                 <span className="detail-label">📧 Email:</span>
-                <span className="detail-value">your.email@gmail.com</span>
+                <span className="detail-value">dpkonarauni2001@gmail.com</span>
               </div>
               <div className="detail-item">
                 <span className="detail-label">📍 Location:</span>
@@ -24,8 +25,8 @@ const About = () => {
                 <span className="detail-value">{personalInfo.university}</span>
               </div>
               <div className="detail-item">
-                <span className="detail-label">📚 Index:</span>
-                <span className="detail-value">{personalInfo.index}</span>
+                <span className="detail-label">🚩 Address:</span>
+                <span className="detail-value">{personalInfo.Address}</span>
               </div>
             </div>
             <div className="about-stats">
@@ -46,8 +47,13 @@ const About = () => {
           <div className="about-image">
             <div className="image-card">
               <i className="fas fa-code"></i>
-              <h3>Cloud & Data Enthusiast</h3>
-              <p>Building the future with cloud computing and big data technologies</p>
+              <img 
+                src={heroImage} 
+                alt="Cloud & Data Enthusiast" 
+                className="about-hero-image"
+              />
+              <h3>Assoicate Software Engineer</h3>
+              <p>Building the future with scalable software architectures and intelligent applications</p>
             </div>
           </div>
         </div>

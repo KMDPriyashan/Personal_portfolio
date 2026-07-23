@@ -86,9 +86,18 @@
   margin-bottom: 1rem;
 }
 
+/* Image styles - FIXED SIZE */
+.about-hero-image {
+  width: 500px;               /* ✅ Semicolon */
+  height: 500px;
+  border-radius: 10px;            /* ✅ Semicolon */
+  
+}
+
 .image-card h3 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  margin-top: 7px;
 }
 
 .image-card p {

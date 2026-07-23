@@ -192,45 +192,51 @@ export const personalInfo = {
   projects: [
     {
       title: 'EduVista - Learning Management System',
-      description: 'A scalable Learning Management System featuring interactive course tracking, real-time quizzes, secure payments, and high-quality video streaming to deliver an engaging online education experience.',
+      description: 'An interactive LMS featuring course tracking, live quizzes, secure payments, and video streaming.',
       tech: ['React', 'Node.js', 'Express', 'MongoDB', 'AWS S3', 'Tailwind CSS'],
       link: 'https://github.com/your-project',
-      image: '🎓'
+      image: '🎓',
+      imageUrl: '/src/assets/eduvista.png'
     },
     {
       title: "SPAG's Official Website",
-      description: "An official platform designed to present organization services, updates, and resources through a modern, responsive, and user-friendly web interface.",
+      description: 'A responsive platform showcasing organization services, updates, and resources.',
       tech: ['React', 'Next.js', 'Tailwind CSS', 'Node.js'],
       link: 'https://github.com/your-project/spag-website',
-      image: '🌐'
+      image: '🌐',
+      imageUrl: '/src/assets/hero.png'
     },
     {
       title: 'Midgreen - E-commerce Mobile Application',
-      description: 'A modern e-commerce mobile application designed for seamless online shopping, featuring intuitive product browsing, secure payment integration, and real-time order tracking.',
+      description: 'A mobile e-commerce app featuring intuitive browsing, secure payments, and order tracking.',
       tech: ['React Native', 'Node.js', 'MongoDB', 'Redux', 'Stripe API'],
       link: 'https://github.com/your-project/midgreen-app',
-      image: '📱'
+      image: '📱',
+      imageUrl: '/src/assets/hero.png'
     },
     {
       title: 'Clothing Dark - E-Commerce Website',
-      description: 'A stylish, dark-themed e-commerce platform engineered for modern fashion brands, featuring seamless product filtering, secure checkout, and a responsive shopping interface.',
+      description: 'A dark-themed fashion e-commerce platform with smooth filtering and secure checkout.',
       tech: ['React', 'Next.js', 'Tailwind CSS', 'Node.js', 'Stripe'],
       link: 'https://github.com/your-project/clothing-dark',
-      image: '🛍️' // or '🖤' / '👗'
+      image: '🛍️',
+      imageUrl: '/src/assets/hero.png'
     },
     {
       title: 'Tripzy - Your Travel Companion',
-      description: 'A comprehensive travel companion mobile application designed to simplify trip planning, itinerary management, real-time location tracking, and local attraction discovery.',
+      description: 'A travel app designed for trip planning, itineraries, location tracking, and discovery.',
       tech: ['React Native', 'Node.js', 'Firebase', 'Google Maps API'],
       link: 'https://github.com/your-project/tripzy',
-      image: '✈️' // or '🗺️' / '🧳'
+      image: '✈️',
+      imageUrl: '/src/assets/hero.png'
     },
     {
       title: 'FitFood - Healthy food assistant',
-      description: 'A smart health and nutrition mobile application designed to simplify meal planning, calorie tracking, personalized diet recommendations, and healthy recipe discovery.',
+      description: 'A health and nutrition app for meal planning, calorie tracking, and diet recommendations.',
       tech: ['React Native', 'Node.js', 'MongoDB', 'Nutrition API'],
       link: 'https://github.com/your-project/fitfood',
-      image: '🥗' // or '🍎' / '🥑'
+      image: '🥗',
+      imageUrl: '/src/assets/hero.png'
     }
   ]
 };

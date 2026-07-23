@@ -1,3 +1,7 @@
+/* ============================================ */
+/* HERO SECTION - MODERN REDESIGN */
+/* ============================================ */
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -5,7 +9,14 @@
   position: relative;
   overflow: hidden;
   padding: 100px 0 50px;
+  background: radial-gradient(ellipse at 20% 50%, rgba(0, 210, 255, 0.05) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 50%, rgba(58, 123, 213, 0.05) 0%, transparent 60%),
+              #0a0a0a;
 }
+
+/* ============================================ */
+/* ANIMATED BACKGROUND PARTICLES */
+/* ============================================ */
 
 .hero-background {
   position: absolute;
@@ -20,42 +31,82 @@
 .gradient-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.3;
-}
-
-.orb1 {
-  width: 400px;
-  height: 400px;
-  background: #00d2ff;
-  top: -100px;
-  left: -100px;
+  filter: blur(100px);
+  opacity: 0.2;
   animation: floatOrb 8s ease-in-out infinite;
 }
 
+.orb1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #00d2ff, transparent);
+  top: -150px;
+  left: -150px;
+  animation-delay: 0s;
+}
+
 .orb2 {
-  width: 300px;
-  height: 300px;
-  background: #3a7bd5;
-  bottom: -50px;
-  right: -50px;
-  animation: floatOrb 10s ease-in-out infinite reverse;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #3a7bd5, transparent);
+  bottom: -100px;
+  right: -100px;
+  animation-delay: 2s;
+  animation-direction: reverse;
 }
 
 .orb3 {
-  width: 200px;
-  height: 200px;
-  background: #8b5cf6;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #8b5cf6, transparent);
   top: 50%;
   left: 50%;
-  animation: floatOrb 12s ease-in-out infinite;
+  transform: translate(-50%, -50%);
+  animation-delay: 4s;
+  opacity: 0.1;
+}
+
+.orb4 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #00d2ff, transparent);
+  top: 20%;
+  right: 10%;
+  animation-delay: 1s;
+  opacity: 0.15;
+  animation-duration: 12s;
+}
+
+.orb5 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #3a7bd5, transparent);
+  bottom: 30%;
+  left: 5%;
+  animation-delay: 3s;
+  opacity: 0.1;
+  animation-duration: 10s;
+  animation-direction: reverse;
 }
 
 @keyframes floatOrb {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -30px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
+  0%, 100% { 
+    transform: translate(0, 0) scale(1); 
+  }
+  25% { 
+    transform: translate(40px, -40px) scale(1.1); 
+  }
+  50% { 
+    transform: translate(-20px, 30px) scale(0.9); 
+  }
+  75% { 
+    transform: translate(30px, 20px) scale(1.05); 
+  }
 }
+
+/* ============================================ */
+/* HERO CONTENT LAYOUT */
+/* ============================================ */
 
 .hero-content {
   display: grid;
@@ -66,109 +117,295 @@
   z-index: 1;
 }
 
+/* ============================================ */
+/* HERO TEXT - MODERN STYLES */
+/* ============================================ */
+
 .hero-badge {
   display: inline-block;
-  padding: 8px 20px;
-  background: rgba(0, 210, 255, 0.1);
-  border: 1px solid rgba(0, 210, 255, 0.2);
+  padding: 10px 24px;
+  background: rgba(0, 210, 255, 0.08);
+  border: 1px solid rgba(0, 210, 255, 0.15);
   border-radius: 50px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #00d2ff;
   margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-badge::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.1), transparent 60%);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { transform: translate(-30%, -30%) scale(1); }
+  50% { transform: translate(30%, 30%) scale(1.2); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   font-weight: 800;
   line-height: 1.1;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
+  animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .hero-title .highlight {
-  background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+  background: linear-gradient(135deg, #00d2ff, #3a7bd5, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientMove 4s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 .hero-subtitle {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease-out 0.4s both;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  
+  border-radius: 3px;
 }
 
 .hero-description {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.8;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.9;
   max-width: 500px;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 1s ease-out 0.6s both;
 }
+
+/* ============================================ */
+/* BUTTONS - MODERN STYLES */
+/* ============================================ */
 
 .hero-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
   flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 14px 35px;
+  background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.4s ease;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(0, 210, 255, 0.3);
 }
 
 .btn-secondary {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 12px 30px;
+  gap: 0.6rem;
+  padding: 14px 30px;
   color: #fff;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.15);
   border-radius: 50px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
   border-color: #00d2ff;
   transform: translateY(-3px);
+  background: rgba(0, 210, 255, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 210, 255, 0.1);
 }
 
 .btn-secondary i {
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .btn-secondary:hover i {
-  transform: translateX(5px);
+  transform: translateX(8px);
 }
+
+/* ============================================ */
+/* HERO IMAGE - MODERN STYLES */
+/* ============================================ */
 
 .hero-image {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeInUp 1s ease-out 0.4s both;
 }
-
-/* ============================================ */
-/* IMAGE UPDATED - LARGE SIZE WITH CIRCLE */
-/* ============================================ */
 
 .hero-avatar {
   position: relative;
-  width: 550px;          /* Increased from 350px */
-  height: 550px;         /* Increased from 350px */
-  border-radius: 30%;           /* Changed from 20% to 50% for perfect circle */
-  overflow: hidden;             /* Keeps image inside circle */
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  overflow: hidden;
   flex-shrink: 0;
-  margin-top: auto;
-  margin-bottom: auto;
-  box-shadow: 0 0 60px rgba(0, 210, 255, 0.1);
+  margin: 0 auto;
+  box-shadow: 
+    0 0 80px rgba(0, 210, 255, 0.1),
+    0 0 160px rgba(0, 210, 255, 0.05),
+    inset 0 0 80px rgba(0, 210, 255, 0.05);
+  transition: all 0.6s ease;
 }
 
-/* Rotating ring - stays on top */
+.hero-avatar:hover {
+  box-shadow: 
+    0 0 100px rgba(0, 210, 255, 0.2),
+    0 0 200px rgba(0, 210, 255, 0.1),
+    inset 0 0 100px rgba(0, 210, 255, 0.08);
+}
+
+/* ============================================ */
+/* PROFILE IMAGE - CLEAR & CRISP */
+/* ============================================ */
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1.02);
+  filter: brightness(1.02) contrast(1.02);
+}
+
+.profile-image:hover {
+  transform: scale(1.06);
+  filter: brightness(1.1) contrast(1.05);
+}
+
+/* ============================================ */
+/* ANIMATED RINGS - MODERN DESIGN */
+/* ============================================ */
+
 .avatar-ring {
   position: absolute;
-  top: -12px;
-  left: -12px;
-  width: 780px;          /* Increased to match new size */
-  height: 780px;         /* Increased to match new size */
-  border-radius: 20%;
+  top: -15px;
+  left: -15px;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
   z-index: 2;
   pointer-events: none;
+}
+
+/* Main ring - gradient rotating */
+.avatar-ring::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #00d2ff;
+  border-bottom-color: #3a7bd5;
+  animation: spin 10s linear infinite;
+}
+
+/* Second ring - reverse rotation */
+.avatar-ring::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-right-color: rgba(139, 92, 246, 0.4);
+  border-left-color: rgba(0, 210, 255, 0.2);
+  animation: spin 15s linear infinite reverse;
+}
+
+/* Third ring - inner */
+.hero-avatar .ring-inner {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  width: calc(100% - 56px);
+  height: calc(100% - 56px);
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: rgba(0, 210, 255, 0.15);
+  border-bottom-color: rgba(58, 123, 213, 0.15);
+  animation: spin 20s linear infinite;
+  z-index: 1;
 }
 
 @keyframes spin {
@@ -176,81 +413,103 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Second ring for extra style */
-.avatar-ring::before {
-  content: '';
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  right: 8px;
-  bottom: 8px;
-  border-radius: 50%;
-}
+/* ============================================ */
+/* GLOW EFFECTS */
+/* ============================================ */
 
-/* Profile Image - LARGE SIZE */
-.profile-image {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center top;   /* Focus on top part (face) */
-  display: block;
-  transition: all 0.5s ease;
-}
-
-/* Image hover effect */
-.profile-image:hover {
-  transform: scale(1.08);
-  filter: brightness(1.1) contrast(1.05);
-}
-
-/* Pulse animation for image */
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.02);
-  }
-}
-
-.profile-image {
-  animation: pulse 4s ease-in-out infinite;
-}
-
-/* Glow effect behind image */
 .hero-avatar::after {
   content: '';
   position: absolute;
-  top: -20px;
-  left: -20px;
-  right: -20px;
-  bottom: -20px;
+  top: -30px;
+  left: -30px;
+  right: -30px;
+  bottom: -30px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 210, 255, 0.15), transparent 70%);
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.12), transparent 70%);
   z-index: 0;
-  animation: glowPulse 3s ease-in-out infinite;
+  animation: glowPulse 4s ease-in-out infinite;
 }
 
 @keyframes glowPulse {
   0%, 100% {
     transform: scale(1);
-    opacity: 0.5;
+    opacity: 0.6;
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.15);
     opacity: 1;
   }
 }
 
-/* Hide avatar placeholder */
-.avatar-placeholder {
-  display: none;
+/* ============================================ */
+/* FLOATING DOTS ANIMATION (Background) */
+/* ============================================ */
+
+.hero-dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(0, 210, 255, 0.3);
+  border-radius: 50%;
+  animation: floatDot 20s linear infinite;
+}
+
+.dot:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+.dot:nth-child(2) { left: 20%; top: 60%; animation-delay: 2s; width: 6px; height: 6px; }
+.dot:nth-child(3) { left: 30%; top: 80%; animation-delay: 4s; }
+.dot:nth-child(4) { left: 40%; top: 10%; animation-delay: 1s; width: 8px; height: 8px; opacity: 0.2; }
+.dot:nth-child(5) { left: 50%; top: 50%; animation-delay: 3s; }
+.dot:nth-child(6) { left: 60%; top: 30%; animation-delay: 5s; width: 5px; height: 5px; }
+.dot:nth-child(7) { left: 70%; top: 70%; animation-delay: 2.5s; }
+.dot:nth-child(8) { left: 80%; top: 15%; animation-delay: 4.5s; width: 7px; height: 7px; opacity: 0.15; }
+.dot:nth-child(9) { left: 90%; top: 55%; animation-delay: 1.5s; }
+.dot:nth-child(10) { left: 15%; top: 45%; animation-delay: 3.5s; width: 3px; height: 3px; }
+
+@keyframes floatDot {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-30px) scale(1.5);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-10px) scale(1);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateY(-40px) scale(1.3);
+    opacity: 0.7;
+  }
 }
 
 /* ============================================ */
-/* RESPONSIVE ADJUSTMENTS */
+/* RESPONSIVE - UPDATED */
 /* ============================================ */
+
+@media (max-width: 1400px) {
+  .hero-avatar {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .avatar-ring {
+    width: 430px;
+    height: 430px;
+  }
+}
 
 @media (max-width: 1200px) {
   .hero-avatar {
@@ -259,8 +518,12 @@
   }
   
   .avatar-ring {
-    width: 374px;
-    height: 374px;
+    width: 380px;
+    height: 380px;
+  }
+  
+  .hero-title {
+    font-size: 3.2rem;
   }
 }
 
@@ -268,10 +531,12 @@
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 3rem;
   }
 
   .hero-description {
     margin: 0 auto 2rem;
+    max-width: 600px;
   }
 
   .hero-buttons {
@@ -284,32 +549,47 @@
   }
 
   .avatar-ring {
-    width: 344px;
-    height: 344px;
+    width: 350px;
+    height: 350px;
   }
 
   .hero-title {
-    font-size: 2.8rem;
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 
   .hero-avatar {
-    width: 250px;
-    height: 250px;
+    width: 260px;
+    height: 260px;
   }
 
   .avatar-ring {
-    width: 274px;
-    height: 274px;
+    width: 290px;
+    height: 290px;
   }
 
   .hero-subtitle {
     font-size: 1.1rem;
+  }
+  
+  .hero-description {
+    font-size: 0.95rem;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    padding: 12px 25px;
+    font-size: 0.9rem;
   }
 }
 
@@ -320,11 +600,27 @@
   }
 
   .avatar-ring {
-    width: 224px;
-    height: 224px;
+    width: 230px;
+    height: 230px;
   }
 
   .hero-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+  
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 6px 16px;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
   }
 }

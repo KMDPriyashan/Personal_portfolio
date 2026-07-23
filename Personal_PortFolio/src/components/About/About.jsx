@@ -46,7 +46,6 @@ const About = () => {
           </div>
           <div className="about-image">
             <div className="image-card">
-              <i className="fas fa-code"></i>
               <img 
                 src={heroImage} 
                 alt="Cloud & Data Enthusiast" 

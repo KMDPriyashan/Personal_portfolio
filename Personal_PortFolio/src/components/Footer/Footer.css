@@ -2,6 +2,7 @@
   padding: 60px 0 30px;
   background: rgba(255, 255, 255, 0.02);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 2rem;
 }
 
 .footer-content {
@@ -16,6 +17,7 @@
 .footer-logo h3 {
   font-size: 1.5rem;
   font-weight: 700;
+  color: #fff;
 }
 
 .footer-logo h3 span {
@@ -25,29 +27,73 @@
 .footer-logo p {
   color: rgba(255, 255, 255, 0.4);
   font-size: 0.9rem;
+  margin-top: 0.3rem;
 }
+
+/* ============================================ */
+/* SOCIAL MEDIA ICONS - FIXED */
+/* ============================================ */
 
 .footer-social {
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
-.footer-social a {
-  width: 40px;
-  height: 40px;
+.footer-social .social-link {
+  width: 45px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 50%;
   color: rgba(255, 255, 255, 0.5);
+  font-size: 1.1rem;
   transition: all 0.3s ease;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.footer-social a:hover {
-  background: #00d2ff;
+/* Hover effects for each social platform */
+.footer-social .social-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.footer-social .social-link.linkedin:hover {
+  background: #0077b5;
   color: #fff;
-  transform: translateY(-3px);
+  border-color: #0077b5;
+  box-shadow: 0 10px 30px rgba(0, 119, 181, 0.3);
+}
+
+.footer-social .social-link.github:hover {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+  box-shadow: 0 10px 30px rgba(51, 51, 51, 0.3);
+}
+
+.footer-social .social-link.facebook:hover {
+  background: #1877f2;
+  color: #fff;
+  border-color: #1877f2;
+  box-shadow: 0 10px 30px rgba(24, 119, 242, 0.3);
+}
+
+.footer-social .social-link.twitter:hover {
+  background: #1da1f2;
+  color: #fff;
+  border-color: #1da1f2;
+  box-shadow: 0 10px 30px rgba(29, 161, 242, 0.3);
+}
+
+.footer-social .social-link.instagram:hover {
+  background: #e4405f;
+  color: #fff;
+  border-color: #e4405f;
+  box-shadow: 0 10px 30px rgba(228, 64, 95, 0.3);
 }
 
 .footer-bottom {
@@ -61,9 +107,35 @@
   font-size: 0.9rem;
 }
 
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
+
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
     text-align: center;
+  }
+  
+  .footer-social {
+    justify-content: center;
+  }
+  
+  .footer-social .social-link {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-social {
+    gap: 0.7rem;
+  }
+  
+  .footer-social .social-link {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
   }
 }

@@ -19,7 +19,7 @@ const Header = () => {
       <nav className="navbar container">
         <div className="logo">
           <a href="#home">
-            <span className="logo-text">KMD<span>Priyashan</span></span>
+            <span className="logo-text">K.M.D<span>Priyashan</span></span>
           </a>
         </div>
 
@@ -33,16 +33,33 @@ const Header = () => {
           <li><a href="#contact" onClick={() => setMobileMenu(false)}>Contact</a></li>
         </ul>
 
+        {/* Social Media Icons - Fixed */}
         <div className="header-social">
-          <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-linkedin-in"></i>
-          </a>
-          <a href={socialLinks.github} target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-github"></i>
-          </a>
-          <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-twitter"></i>
-          </a>
+          {socialLinks.linkedin && socialLinks.linkedin !== '#' && (
+            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+          )}
+          {socialLinks.github && socialLinks.github !== '#' && (
+            <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i className="fab fa-github"></i>
+            </a>
+          )}
+          {socialLinks.facebook && socialLinks.facebook !== '#' && (
+            <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <i className="fab fa-facebook-f"></i>
+            </a>
+          )}
+          {socialLinks.twitter && socialLinks.twitter !== '#' && (
+            <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <i className="fab fa-twitter"></i>
+            </a>
+          )}
+          {socialLinks.instagram && socialLinks.instagram !== '#' && (
+            <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i className="fab fa-instagram"></i>
+            </a>
+          )}
         </div>
 
         <div className="hamburger" onClick={() => setMobileMenu(!mobileMenu)}>

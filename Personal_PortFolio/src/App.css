@@ -1,43 +1,145 @@
+/* ============================================ */
+/* CSS VARIABLES - THEME CONTROL */
+/* ============================================ */
+
+:root {
+  /* Dark Theme (Default) */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: rgba(255, 255, 255, 0.03);
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.5);
+  --border-color: rgba(255, 255, 255, 0.05);
+  --shadow-color: rgba(0, 210, 255, 0.1);
+  --gradient-start: #00d2ff;
+  --gradient-end: #3a7bd5;
+  --card-hover: rgba(0, 210, 255, 0.05);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg-primary: #f5f5f5;
+  --bg-secondary: rgba(0, 0, 0, 0.03);
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: rgba(0, 0, 0, 0.7);
+  --text-muted: rgba(0, 0, 0, 0.5);
+  --border-color: rgba(0, 0, 0, 0.08);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --card-hover: rgba(0, 210, 255, 0.1);
+}
+
+/* ============================================ */
+/* GLOBAL STYLES */
+/* ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+  border-radius: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ============================================ */
+/* SECTION TITLES */
+/* ============================================ */
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================ */
+/* BUTTONS */
+/* ============================================ */
+
+.btn-primary {
+  display: inline-block;
+  padding: 14px 35px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.4s ease;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(0, 210, 255, 0.3);
+}
+
+/* ============================================ */
+/* APP */
+/* ============================================ */
+
 .app {
-  position: relative;
   min-height: 100vh;
+  background: var(--bg-primary);
+  transition: background 0.3s ease;
 }
 
-/* Floating particles background */
-.app::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(2px 2px at 20% 30%, #00d2ff, transparent),
-    radial-gradient(2px 2px at 40% 70%, #3a7bd5, transparent),
-    radial-gradient(2px 2px at 60% 20%, #00d2ff, transparent),
-    radial-gradient(2px 2px at 80% 80%, #3a7bd5, transparent);
-  background-size: 100% 100%;
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.3;
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
 }
 
-/* Animated gradient orbs */
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
-}
-
-.app::after {
-  content: '';
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at 30% 50%, rgba(0, 210, 255, 0.05), transparent 50%),
-              radial-gradient(circle at 70% 80%, rgba(58, 123, 213, 0.05), transparent 50%);
-  pointer-events: none;
-  z-index: -1;
-  animation: float 20s ease-in-out infinite;
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
 }

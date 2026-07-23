@@ -3,16 +3,20 @@ import { personalInfo } from '../../data/personalInfo';
 import './Projects.css';
 // Import project images
 import projectImage1 from '../../assets/eduvista.png';
-import projectImage2 from '../../assets/hero.png';
-import projectImage3 from '../../assets/hero.png';
-import projectImage4 from '../../assets/hero.png';
+import projectImage2 from '../../assets/spag.png';
+import projectImage3 from '../../assets/midgreen.png';
+import projectImage4 from '../../assets/clothing-dark.png';
+import projectImage5 from '../../assets/tripzy.png';
+import projectImage6 from '../../assets/fitfood.png';
 
 // Create an array of imported images
 const projectImages = [
   projectImage1,
   projectImage2,
   projectImage3,
-  projectImage4
+  projectImage4,
+  projectImage5,
+  projectImage6
 ];
 
 const Projects = () => {

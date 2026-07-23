@@ -204,7 +204,7 @@ export const personalInfo = {
       tech: ['React', 'Next.js', 'Tailwind CSS', 'Node.js'],
       link: 'https://github.com/your-project/spag-website',
       image: '🌐',
-      imageUrl: '/src/assets/hero.png'
+      imageUrl: '/src/assets/spag.png'
     },
     {
       title: 'Midgreen - E-commerce Mobile Application',
@@ -212,7 +212,7 @@ export const personalInfo = {
       tech: ['React Native', 'Node.js', 'MongoDB', 'Redux', 'Stripe API'],
       link: 'https://github.com/your-project/midgreen-app',
       image: '📱',
-      imageUrl: '/src/assets/hero.png'
+      imageUrl: '/src/assets/midgreen.png'
     },
     {
       title: 'Clothing Dark - E-Commerce Website',
@@ -220,7 +220,7 @@ export const personalInfo = {
       tech: ['React', 'Next.js', 'Tailwind CSS', 'Node.js', 'Stripe'],
       link: 'https://github.com/your-project/clothing-dark',
       image: '🛍️',
-      imageUrl: '/src/assets/hero.png'
+      imageUrl: '/src/assets/clothing-dark.png'
     },
     {
       title: 'Tripzy - Your Travel Companion',
@@ -228,7 +228,7 @@ export const personalInfo = {
       tech: ['React Native', 'Node.js', 'Firebase', 'Google Maps API'],
       link: 'https://github.com/your-project/tripzy',
       image: '✈️',
-      imageUrl: '/src/assets/hero.png'
+      imageUrl: '/src/assets/tripzy.png'
     },
     {
       title: 'FitFood - Healthy food assistant',
@@ -236,7 +236,7 @@ export const personalInfo = {
       tech: ['React Native', 'Node.js', 'MongoDB', 'Nutrition API'],
       link: 'https://github.com/your-project/fitfood',
       image: '🥗',
-      imageUrl: '/src/assets/hero.png'
+      imageUrl: '/src/assets/fifood.png'
     }
   ]
 };
